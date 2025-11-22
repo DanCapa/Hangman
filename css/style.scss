@@ -1,0 +1,346 @@
+/***** VARIABLES *************/
+$primary_color: #3498db;
+$secondary-color: #e67e22;
+$third-color: #f1c40f;
+$background: #ecf0f1;
+
+/* The great reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background;
+  font-family: "Roboto", monospace;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: square;
+  margin: 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-contact ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-header a {
+  display: none;
+}
+
+.main-header h1 {
+  padding-top: 10px;
+  /* border: 1px solid red; */
+  padding-bottom: 10px;
+}
+
+.header-container {
+  display: flex;
+  background-color: $secondary-color;
+  color: #f7fff7ff;
+  /* border: 1px solid red; */
+  padding-left: 20px;
+}
+
+.main-header {
+  flex: 1;
+}
+
+/******************************************/
+/* Hangman start styles */
+/******************************************/
+
+.load-container {
+  background-color: $primary_color;
+}
+
+.load {
+  display: none;
+  width: 300px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: $primary_color;
+  color: white;
+  text-align: center;
+}
+
+/* mixin sample */
+
+@mixin hangman-button-style($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hangman-container button {
+  @include hangman-button-style($primary_color, #fff);
+}
+
+.hangman-container button:hover {
+  background-color: #4a7cd1;
+}
+
+.hangman-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary_color;
+}
+
+.hangman-container {
+  position: relative;
+}
+
+.winner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.winner-container button:hover,
+.loser-container button:hover {
+  background-color: #4a7cd1;
+  cursor: pointer;
+}
+
+.winner-container button,
+.loser-container button {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #6197ef;
+  color: #fbf9f9;
+}
+
+.winner-container img {
+  width: 30%;
+  height: auto;
+}
+.loser-container img {
+  width: 50%;
+  height: auto;
+}
+
+.loser-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary_color;
+  padding: 20px;
+  color: white;
+}
+
+button:disabled {
+  background-color: #3b3939;
+  color: #fbf9f9;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.keyboard-row1,
+.keyboard-row2,
+.keyboard-row3 {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+}
+
+.hangman-container .key-item {
+  margin: 5px;
+}
+
+.output {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+/******************************************/
+/* Hangman end styles */
+/******************************************/
+
+/* Sticky Footer */
+.sticky {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: auto;
+}
+
+#main-content {
+  flex: 1;
+  background-color: $third-color;
+}
+
+/* Footer */
+.main-footer {
+  display: flex;
+  background-color: $secondary-color;
+  color: #f7fff7ff;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.footer-contact {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.footer-contact ul li a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.footer-contact h2 {
+  text-align: center;
+}
+
+.footer-copyright {
+  text-align: center;
+}
+
+.main-footer .footer-header {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .main-header h1 {
+    padding-top: 10px;
+    /* border: 1px solid red; */
+    padding-bottom: 10px;
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: 905px) {
+  #wrapper {
+    max-width: 1200px;
+    margin: auto;
+    background-color: $secondary-color;
+  }
+
+  .main-header {
+    /* border: 1px solid green; */
+    padding: 10px 0px;
+    display: flex;
+  }
+
+  .main-header img {
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .main-header h1 {
+    margin-top: 50px;
+  }
+
+  .main-header a {
+    display: block;
+  }
+
+  .main-footer .footer-header {
+    display: block;
+  }
+
+  .footer-header {
+    /* border: 1px solid blue; */
+    text-align: center;
+  }
+
+  .footer-header h2 {
+    /* border: 1px solid red; */
+    margin-bottom: 25px;
+  }
+  .main-footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .main-footer-wrapper .footer-header {
+    margin-right: 20px;
+  }
+
+  .main-footer-wrapper .footer-contact {
+    /* border: 1px solid yellow; */
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 1300px) {
+  #wrapper {
+    max-width: 1500px;
+    margin: auto;
+    background-color: $secondary-color;
+  }
+
+  .main-header {
+    /* border: 1px solid green; */
+    padding: 10px 0px;
+    display: flex;
+  }
+
+  .main-header img {
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .main-header h1 {
+    /* border: 1px solid yellow; */
+    margin-top: 50px;
+  }
+
+  .main-header a {
+    display: block;
+  }
+
+  .main-footer .footer-header {
+    display: block;
+  }
+
+  .main-footer-wrapper .footer-header {
+    /* border: 1px solid red; */
+    margin-left: 20px;
+  }
+
+  .main-footer-wrapper .footer-contact {
+    /* border: 1px solid yellow; */
+    margin-right: 30px;
+  }
+}
